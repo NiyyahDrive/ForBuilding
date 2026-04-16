@@ -19,10 +19,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-
-      - run: ls -la
-      
-      - run: ls -la website/
+          cache: npm
+          cache-dependency-path: website/package-lock.json
 
       - run: npm ci
         working-directory: website
